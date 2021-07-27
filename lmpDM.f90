@@ -1,5 +1,3 @@
-!gfortran -O3 -mcmodel=medium phon.f90 -llapack -o phon.x
-!ifort -O3 -mkl phon.f90
 Program phon
 implicit none
 integer, parameter :: natom = 500
