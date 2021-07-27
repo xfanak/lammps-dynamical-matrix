@@ -1,4 +1,4 @@
-Program phon
+Program SolveDynamicalMatrix
 implicit none
 integer, parameter :: natom = 500
 integer, parameter :: N = natom*3
@@ -26,7 +26,7 @@ mat = (matrix + transpose(matrix))/2 ! make the DM symmetric
 !call dgeev('N','N',N,mat,N,eig,eig1,mat1,N,mat2,N,work,lwork,info)
 call DSYEV('N','U',N,mat,N,eig,work,lwork,info)
 write(*,*) info,work(1)
-open(3,file='eigvalues.dat')
+open(3,file='eigvalues.dat')! Note they are not frequencies
 do i = 1,N
    write(3,*) eig(i)
 enddo
